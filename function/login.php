@@ -38,5 +38,4 @@ function login($data)
             return -1;
         }
     }
-
 ?>

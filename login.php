@@ -21,11 +21,6 @@
             <input type="email" id="inputEmail" class="form-control mb-4" placeholder="Indirizzo Email" name = "email" required autofocus>
             <label for="inputPassword" class="sr-only mb-2">Password</label>
             <input type="password" id="inputPassword" class="form-control mb-4" placeholder="Password" name = "password" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Ricorda i dati
-                </label>
-            </div>
 
             <?php
 session_start();
