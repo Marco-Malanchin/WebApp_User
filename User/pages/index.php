@@ -31,8 +31,8 @@ if(empty($_SESSION['user_id'])){
                 
                 if(!empty($response)){
                     echo ('
-                    <h2>Ciao, <b>' . $response . '</b>.</h2>
-                    <h2>Benvenuto ! </h2>
+                    <h3>Ciao, <b>' . $response . '</b>.</h3>
+                    <h3>Benvenuto! </h3>
                     '); 
                 }else{
                     echo('<p class="text-danger"><b>Errore</b></p>'); 
@@ -41,6 +41,31 @@ if(empty($_SESSION['user_id'])){
 
             </div>
         </div>
+        <div class="container mt-3">
+            <div class="row text-center" >
+                <h2>Ecco le nostre categorie di prodotti:</h2>
+            </div>
+        </div>
+        <div class = "container sm">
+            <div class = "row">
+        <div class="card mt-3 ms-3" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  </div>
+  <div class="card mt-3 ms-3" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  </div>
+</div>      
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
