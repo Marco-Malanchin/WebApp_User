@@ -60,27 +60,55 @@ if(empty($_SESSION['user_id'])){
                 switch ($row['name']){
                     case "panini":
                         echo('<img src="../assets/img/panini.jpg" class="card-img-top" alt="..."> ');
+                        echo ('
+                        <div class="card-body">
+                        <h5 class="card-title">' . $row['name'] . ' </h5>
+                        <a href="prodotti.php?id=' .$row['id'].'" class="btn btn-primary">visualizza prodotti</a>
+                        </div>
+                        </div>
+                        ');
                         break;
                         case "bibite":
                             echo('<img src="../assets/img/bibite.png" class="card-img-top" alt="..."> ');
+                            echo ('
+                            <div class="card-body">
+                            <h5 class="card-title">' . $row['name'] . ' </h5>
+                            <a href="prodotti.php?id='.$row['id'].'" class="btn btn-primary">visualizza prodotti</a>
+                            </div>
+                            </div>
+                            ');
                             break;
                         case "piadine":
                              echo('<img src="../assets/img/piadine.jpeg" class="card-img-top" alt="..."> ');
+                             echo ('
+                             <div class="card-body">
+                             <h5 class="card-title">' . $row['name'] . ' </h5>
+                             <a href="prodotti.php?id=' .$row['id'].'" class="btn btn-primary">visualizza prodotti</a>
+                             </div>
+                             </div>
+                             ');
                              break;
                         case "brioches":
                              echo('<img src="../assets/img/brioches.jpg" class="card-img-top" alt="..."> ');
+                             echo ('
+                             <div class="card-body">
+                             <h5 class="card-title">' . $row['name'] . ' </h5>
+                             <a href="prodotti.php?id=' .$row['id'].'" class="btn btn-primary">visualizza prodotti</a>
+                             </div>
+                             </div>
+                             ');
                              break;
                         case "snack":
                              echo('<img src="../assets/img/snack.jpg" class="card-img-top" alt="..."> ');
+                             echo ('
+                             <div class="card-body">
+                             <h5 class="card-title">' . $row['name'] . ' </h5>
+                             <a href="prodotti.php?id=' .$row['id'].'" class="btn btn-primary">visualizza prodotti</a>
+                             </div>
+                             </div>
+                             ');
                              break;
                 };
-                  echo ('
-                <div class="card-body">
-                <h5 class="card-title">' . $row['name'] . ' </h5>
-                <a href="#" class="btn btn-primary">visualizza prodotti</a>
-                </div>
-                </div>
-                ');
         }
 
 

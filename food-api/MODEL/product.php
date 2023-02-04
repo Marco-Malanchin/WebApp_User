@@ -163,19 +163,19 @@ $this->SendOutput($result, JSON_OK);
         $this->SendOutput($result, JSON_OK);
     }
 
-    public function getArchiveProductsLikeWithTag($name, $tag)
+    public function getArchiveProductsLikeWithTag($tag)
     {
-        $formattedName = str_replace("+", " ", $name);
-        $sql = "SELECT distinct p.id as 'ID',p.name as 'Nome prodotto', p.price as 'Prezzo', t.id as 'Tag'
+        $sql = "SELECT distinct p.id as 'ID',p.name as 'Nome prodotto', p.price as 'Prezzo'
         from product p
         left join product_tag pt on pt.product=p.id
         left join tag t on t.id=pt.tag
-        where p.name LIKE  '%$formattedName%' AND t.id = $tag;
+        where t.id = $tag AND p.quantity>0;
         ";
 
         $result = $this->conn->query($sql);
         $this->SendOutput($result, JSON_OK);
     }
+    
     public function setProductQuantity($id, $value)
     {
         $sql = sprintf("UPDATE product
