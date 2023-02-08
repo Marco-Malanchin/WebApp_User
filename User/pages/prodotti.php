@@ -22,6 +22,7 @@ if(empty($_SESSION['user_id'])){
 
     <body>
     <?php require_once(__DIR__.'\navbar.php'); ?>
+    <form class="form-product" method="post">
     <div class="container mt-3">
             <div class="row text-center" >
                 <h2>Prodotti:</h2>
@@ -31,7 +32,7 @@ if(empty($_SESSION['user_id'])){
     <div class = "row  row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     <?php
      include_once dirname(__FILE__) . '/../function/product.php';
-    $id = $_GET['id'];
+     $id = $_GET['id'];
      $prod_arr = getProductsTag($id);
     if (!empty($prod_arr) && $prod_arr != -1) {
         foreach ($prod_arr as $row) {
@@ -72,20 +73,7 @@ if(empty($_SESSION['user_id'])){
                             <div class="card-body">
                             <h5 class="card-title">' . $row['name'] . ' </h5>
                             <h6 class="card-title">€' . $row['Price'] . ' </h6>
-                            <div class="input-group quantity" style="width: 150px">
-                        <div class="input-group-prepend decrement-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #dc3545">-</span>
-                        </div>
-                        <input type="text" name="qty" class="qty-input form-control" maxlength="3" max="50" value="0">
-                        <div class="input-group-append  increment-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #28a745">+</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                    <button type="submit">
-                        <i class="bx bx-cart-add"></i>
-                        </button>
-                        </div>
+                            <a href="singleProduct.php?id=' .$row['ID'].'" class="btn btn-primary">visualizza prodotto</a>
                             </div>
                             </div>
                             ');
@@ -169,7 +157,7 @@ if(empty($_SESSION['user_id'])){
 </div>
 </div>
 
-
+</form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
