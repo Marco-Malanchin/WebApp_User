@@ -36,13 +36,14 @@ if(empty($_SESSION['user_id'])){
 <?php
      include_once dirname(__FILE__) . '/../function/product.php';
      $id = $_GET['id'];
+$img = $_GET['img'];
      $prod_arr = getProducts($id);
     if (!empty($prod_arr) && $prod_arr != -1) {
         foreach ($prod_arr as $row) {
             echo ('
                 <div class="card mx-auto" style="width: 18rem;">
                 ');
-                    echo ('<img src="../assets/img/panini.jpg" class="card-img-top" alt="..."> ');
+                    echo ('<img src='.$img.'  class="card-img-top" alt="..."> ');
                     echo ('
                         <div class="card-body">
                         <h5 class="card-title">' . $row['name'] . ' </h5>

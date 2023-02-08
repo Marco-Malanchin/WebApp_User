@@ -42,113 +42,63 @@ if(empty($_SESSION['user_id'])){
             switch ($id) {
                 case "1":
                     echo ('<img src="../assets/img/panini.jpg" class="card-img-top" alt="..."> ');
+                    $img = "../assets/img/panini.jpg";
                     echo ('
-                        <div class="card-body">
-                        <h5 class="card-title">' . $row['name'] . ' </h5>
-                        <h6 class="card-title">€' . $row['Price'] . ' </h6>
-                        <div class="input-group quantity" style="width: 150px ">
-                        <div class="input-group-prepend decrement-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #dc3545">-</span>
-                        </div>
-                        <input type="text" name="qty" class="qty-input form-control" maxlength="3" max="50" value="0">
-                        <div class="input-group-append  increment-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #28a745">+</span>
-                        </div>
-                        
-                        
-                        
+                    <div class="card-body">
+                    <h5 class="card-title">' . $row['name'] . ' </h5>
+                    <h6 class="card-title">€' . $row['Price'] . ' </h6>
+                    <a href="singleProduct.php?id=' .$row['ID'].'& img= '.$img.' " class="btn btn-primary">visualizza prodotto</a>
                     </div>
-                    <div class="d-flex justify-content-end">
-                    <button type="submit">
-                        <i class="bx bx-cart-add"></i>
-                        </button>
-                        </div>
-                        </div>
-                        </div>
-                        ');
+                    </div>
+                    ');
                     break;
                     case "2":
                         echo('<img src="../assets/img/bibite.png" class="card-img-top" alt="..."> ');
+                    $img = "../assets/img/bibite.png";
                         echo ('
                             <div class="card-body">
                             <h5 class="card-title">' . $row['name'] . ' </h5>
                             <h6 class="card-title">€' . $row['Price'] . ' </h6>
-                            <a href="singleProduct.php?id=' .$row['ID'].'" class="btn btn-primary">visualizza prodotto</a>
+                            <a href="singleProduct.php?id=' .$row['ID'].'& img= '.$img.' " class="btn btn-primary">visualizza prodotto</a>
                             </div>
                             </div>
                             ');
                         break;
                         case "3":
                             echo('<img src="../assets/img/piadine.jpeg" class="card-img-top" alt="..."> ');
+                          $img ="../assets/img/piadine.jpeg";
                             echo ('
-                                <div class="card-body">
-                                <h5 class="card-title">' . $row['name'] . ' </h5>
-                                <h6 class="card-title">€' . $row['Price'] . ' </h6>
-                                <div class="input-group quantity" style="width: 150px">
-                        <div class="input-group-prepend decrement-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #dc3545">-</span>
-                        </div>
-                        <input type="text" name="qty" class="qty-input form-control" maxlength="3" max="50" value="0">
-                        <div class="input-group-append  increment-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #28a745">+</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                    <button type="submit">
-                        <i class="bx bx-cart-add"></i>
-                        </button>
-                        </div>
-                                </div>
-                                </div>
-                                ');
+                            <div class="card-body">
+                            <h5 class="card-title">' . $row['name'] . ' </h5>
+                            <h6 class="card-title">€' . $row['Price'] . ' </h6>
+                            <a href="singleProduct.php?id=' .$row['ID'].'& img= '.$img.' " class="btn btn-primary">visualizza prodotto</a>
+                            </div>
+                            </div>
+                            ');
                             break;
                             case "4":
                                 echo('<img src="../assets/img/brioches.jpg" class="card-img-top" alt="..."> ');
+                                $img ="../assets/img/brioches.jpg";
                                 echo ('
-                                    <div class="card-body">
-                                    <h5 class="card-title">' . $row['name'] . ' </h5>
-                                    <h6 class="card-title">€' . $row['Price'] . ' </h6>
-                                    <div class="input-group quantity" style="width: 150px">
-                        <div class="input-group-prepend decrement-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #dc3545">-</span>
-                        </div>
-                        <input type="text" name="qty" class="qty-input form-control" maxlength="3" max="50" value="0">
-                        <div class="input-group-append  increment-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #28a745">+</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                    <button type="submit">
-                        <i class="bx bx-cart-add"></i>
-                        </button>
-                        </div>
-                                    </div>
-                                    </div>
-                                    ');
+                                <div class="card-body">
+                                <h5 class="card-title">' . $row['name'] . ' </h5>
+                                <h6 class="card-title">€' . $row['Price'] . ' </h6>
+                                <a href="singleProduct.php?id=' .$row['ID'].'& img= '.$img.' " class="btn btn-primary">visualizza prodotto</a>
+                                </div>
+                                </div>
+                                ');
                                 break;
                                 case "5":
                                     echo('<img src="../assets/img/snack.jpg" class="card-img-top" alt="..."> ');
+                                    $img ="../assets/img/snack.jpg";
                                     echo ('
-                                        <div class="card-body">
-                                        <h5 class="card-title">' . $row['name'] . ' </h5>
-                                        <h6 class="card-title">€' . $row['Price'] . ' </h6>
-                                        <div class="input-group quantity" style="width: 150px">
-                        <div class="input-group-prepend decrement-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #dc3545">-</span>
-                        </div>
-                        <input type="text" name="qty" class="qty-input form-control" maxlength="3" max="50" value="0">
-                        <div class="input-group-append  increment-btn" style="cursor: pointer">
-                            <span class="input-group-text text-white" style="background-color: #28a745">+</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                    <button type="submit">
-                        <i class="bx bx-cart-add"></i>
-                        </button>
-                        </div>
-                                        </div>
-                                        </div>
-                                        ');
+                                    <div class="card-body">
+                                    <h5 class="card-title">' . $row['name'] . ' </h5>
+                                    <h6 class="card-title">€' . $row['Price'] . ' </h6>
+                                    <a href="singleProduct.php?id=' .$row['ID'].'& img= '.$img.' " class="btn btn-primary">visualizza prodotto</a>
+                                    </div>
+                                    </div>
+                                    ');
                                     break;
             }
         }
