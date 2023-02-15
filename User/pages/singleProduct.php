@@ -82,6 +82,7 @@ if(empty($_SESSION['user_id'])){
                                         "user" => $userId,
                                         "quantity" => $qty,
                                     );
+                                    
                                     $response = addProductCart($data);
         
                                     if (!empty($response->Message)) {
