@@ -35,8 +35,10 @@ if(empty($_SESSION['user_id'])){
 </div>
 <?php
      include_once dirname(__FILE__) . '/../function/product.php';
+     include_once dirname(__FILE__) . '/../function/cart.php';
      $id = $_GET['id'];
-$img = $_GET['img'];
+     $userId = $_SESSION['user_id'];
+     $img = $_GET['img'];
      $prod_arr = getProducts($id);
     if (!empty($prod_arr) && $prod_arr != -1) {
         foreach ($prod_arr as $row) {
@@ -59,13 +61,37 @@ $img = $_GET['img'];
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
+                    <form class="form-signin" method="post">
                     <button type="submit">
                         <i class="bx bx-cart-add"></i>
                         </button>
+                        </form>
                         </div>
                         </div>
                         </div>
                         ');
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                            $qty = $_POST['qty'];
+                            if ($qty <=  0) {
+                                echo ('<p class = "text-danger">impossibile aggiungere al carrello quantità negative  o uguali a 0</p>');
+                            } else {
+                                if ( $qty != "0") {
+                                    $data = array(
+                                        "product" => $id,
+                                        "user" => $userId,
+                                        "quantity" => $qty,
+                                    );
+                                    $response = addProductCart($data);
+        
+                                    if (!empty($response->Message)) {
+                                        echo ('
+                </br>
+                <p class="text-success">' . $response->Message . '</p>');
+                                    }
+                                }
+                            }
+                        }
                 }
             }
         ?>
