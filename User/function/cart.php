@@ -1,7 +1,7 @@
 <?php 
 function addProductCart($data)
 {
-    $url = 'http://localhost/WebApp_User/food-api/API/order/cart/setAddItem.php';
+    $url = 'http://localhost/WebApp_User/food-api/API/cart/setAddItem.php';
 
     $curl = curl_init($url); //inizializza una nuova sessione di cUrl
     //Curl contiene il return del curl_init 
@@ -25,7 +25,6 @@ function addProductCart($data)
 
     $response = json_decode($responseJson);
 
-    return $response; 
+    return $response->message; 
 }
-
 ?>
